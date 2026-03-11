@@ -1,6 +1,4 @@
 using System;
-using UnityEngine;
-using UnityEngine.Rendering;
 
 public class Character
 {
@@ -26,7 +24,7 @@ public class Character
     public float Mana
     {
         get { return mana; }
-        set
+        private set
         {
             mana = value;
             onManaChanged?.Invoke(mana);
@@ -35,7 +33,7 @@ public class Character
     public float Speed
     {
         get { return speed; }
-        set
+        private set
         {
             speed = value;
             onSpeedChanged?.Invoke(speed);

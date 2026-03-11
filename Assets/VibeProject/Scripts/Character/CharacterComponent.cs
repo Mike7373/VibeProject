@@ -1,10 +1,10 @@
-using System;
 using UnityEngine;
 
 public class CharacterComponent : MonoBehaviour
 {
     [SerializeField] private CharacterData characterData;
 
+    private Animator _animator;
     private Character _character;
     private Vector3 _playerDirection = Vector3.zero;
     private Rigidbody _rb;
@@ -12,6 +12,8 @@ public class CharacterComponent : MonoBehaviour
 
     private void Awake()
     {
+        _animator = GetComponentInChildren<Animator>();   
+
         if (TryGetComponent<Rigidbody>(out Rigidbody rigidbody))
             _rb = rigidbody;
         else
@@ -33,7 +35,8 @@ public class CharacterComponent : MonoBehaviour
     public void UpdateMoveDirection(Vector3 direction)
     {
         _playerDirection = direction * _character.Speed;
-        Debug.Log($"[CharacterComponent] {direction}");
+        _animator.SetBool("isWalking", _playerDirection != Vector3.zero);
+        //Debug.Log($"[CharacterComponent] {direction}");
     }
 
     private void TryMovePlayer()
