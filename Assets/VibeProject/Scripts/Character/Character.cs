@@ -1,52 +1,55 @@
+using System;
 using UnityEngine;
+using UnityEngine.Rendering;
 
-public class Character : MonoBehaviour
+public class Character
 {
-    //Cambiare
-    private float speed = 5;
-    private Vector3 playerDirection = Vector3.zero;
+    private float maxHealth;
+    private float health;
+    private float maxMana;
+    private float mana;
+    private float speed;
 
-    private PlayerController playerController;
-    private bool isPlayer = false;
+    public event Action<float> onHealthChanged;
+    public event Action<float> onManaChanged;
+    public event Action<float> onSpeedChanged;
 
-    private void Awake()
+    public float Health
     {
-        if (TryGetComponent<PlayerController>(out PlayerController p))
+        get { return health; }
+        private set
         {
-            playerController = p;
-            isPlayer = true;
+            health = value;
+            onHealthChanged?.Invoke(health);
+        }
+    }
+    public float Mana
+    {
+        get { return mana; }
+        set
+        {
+            mana = value;
+            onManaChanged?.Invoke(mana);
+        }
+    }
+    public float Speed
+    {
+        get { return speed; }
+        set
+        {
+            speed = value;
+            onSpeedChanged?.Invoke(speed);
         }
     }
 
-    private void OnEnable()
+    public Character(CharacterData data)
     {
-        if (isPlayer)
-        {
-            playerController.playerMoved += UpdateMoveDirection;
-        }
-    }
-
-    private void OnDisable()
-    {
-        playerController.playerMoved -= UpdateMoveDirection;
+        maxHealth = data.maxHealth;
+        health = maxHealth;
+        maxMana = data.maxMana;
+        mana = maxMana;
+        speed = data.speed;
     }
 
 
-    private void Update()
-    {
-        TryMovePlayer();
-    }
-
-    private void UpdateMoveDirection(Vector3 direction)
-    {
-        playerDirection = direction * speed * Time.deltaTime;
-    }
-
-    private void TryMovePlayer()
-    {
-        if (isPlayer)
-        {
-            transform.position += playerDirection;
-        }
-    }
 }
