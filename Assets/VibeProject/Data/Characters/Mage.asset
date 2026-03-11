@@ -15,4 +15,4 @@ MonoBehaviour:
   characterName: Mage
   maxHealth: 10
   maxMana: 10
-  speed: 20
+  speed: 5
