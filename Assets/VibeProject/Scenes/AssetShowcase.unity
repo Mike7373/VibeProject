@@ -801,6 +801,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c872da9f0e2602e41a2a54798a8fc6f7, type: 3}
   m_PrefabInstance: {fileID: 381398668}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &394037377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 394037378}
+  - component: {fileID: 394037379}
+  - component: {fileID: 394037380}
+  m_Layer: 0
+  m_Name: Mage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &394037378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394037377}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -41.62022, y: -0, z: 34.10886}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3830829466160554801}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &394037379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394037377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1dafac7352b9904d9101510d74f8f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
+--- !u!114 &394037380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394037377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: bea40590acf658c45b460b4e48899f5f, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2505,7 +2581,6 @@ Transform:
   - {fileID: 1761641672}
   - {fileID: 2081656643}
   - {fileID: 618737995}
-  - {fileID: 3830829466160554801}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1358875676
@@ -4743,11 +4818,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1326171315}
+    m_TransformParent: {fileID: 394037378}
     m_Modifications:
     - target: {fileID: 1624868361555061364, guid: cbfee2d4ab31e2947a02e20b3e56cd9f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -81.81588
+      value: -0.19565964
       objectReference: {fileID: 0}
     - target: {fileID: 1624868361555061364, guid: cbfee2d4ab31e2947a02e20b3e56cd9f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4755,7 +4830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1624868361555061364, guid: cbfee2d4ab31e2947a02e20b3e56cd9f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.57085
+      value: -4.5380096
       objectReference: {fileID: 0}
     - target: {fileID: 1624868361555061364, guid: cbfee2d4ab31e2947a02e20b3e56cd9f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4787,7 +4862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3711368321752201138, guid: cbfee2d4ab31e2947a02e20b3e56cd9f, type: 3}
       propertyPath: m_Name
-      value: Mage
+      value: MageModel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4861,3 +4936,4 @@ SceneRoots:
   - {fileID: 1170937492}
   - {fileID: 1326171315}
   - {fileID: 6248542651037345029}
+  - {fileID: 394037378}
